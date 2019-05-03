@@ -13,6 +13,11 @@ class Question(models.Model):
         yesterday = now - datetime.timedelta(days=1)
         return yesterday <= self.pub_date <= now
 
+    # set method properties for QuestionAdmin list_display
+    was_published_recently.admin_order_field = 'pub_date'
+    was_published_recently.boolean = True
+    was_published_recently.short_description = 'Published recently?'
+
     def __str__(self):
         return self.question_text
 
