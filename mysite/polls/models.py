@@ -1,5 +1,3 @@
-""" polls/models.py """
-
 import datetime
 
 from django.db import models
@@ -11,7 +9,9 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
 
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        now = timezone.now()
+        yesterday = now - datetime.timedelta(days=1)
+        return yesterday <= self.pub_date <= now
 
     def __str__(self):
         return self.question_text
