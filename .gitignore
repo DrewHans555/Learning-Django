@@ -122,11 +122,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Do not ignore virtual environment requirements.txt
-!ENV/requirements.txt
-!env/requirements.txt
-!VENV/requirements.txt
-!venv/requirements.txt
-
 # PyCharm stuff
 .idea/
+
+# Visual Studio Code stuff
+.vscode/
